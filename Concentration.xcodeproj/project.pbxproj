@@ -14,6 +14,8 @@
 		A1160EB521267988001C79B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1160EB321267988001C79B4 /* LaunchScreen.storyboard */; };
 		A1160EC021267988001C79B4 /* ConcentrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1160EBF21267988001C79B4 /* ConcentrationTests.swift */; };
 		A1160ECB21267988001C79B4 /* ConcentrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1160ECA21267988001C79B4 /* ConcentrationUITests.swift */; };
+		A1160EDA21269036001C79B4 /* ViewController_lecture1.swift.md in Sources */ = {isa = PBXBuildFile; fileRef = A1160ED921269036001C79B4 /* ViewController_lecture1.swift.md */; };
+		A1160EDD2126904D001C79B4 /* Main_lecture1.storyboard.md in Resources */ = {isa = PBXBuildFile; fileRef = A1160EDB2126904D001C79B4 /* Main_lecture1.storyboard.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		A1160EC621267988001C79B4 /* ConcentrationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConcentrationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1160ECA21267988001C79B4 /* ConcentrationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationUITests.swift; sourceTree = "<group>"; };
 		A1160ECC21267988001C79B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1160ED921269036001C79B4 /* ViewController_lecture1.swift.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ViewController_lecture1.swift.md; sourceTree = "<group>"; };
+		A1160EDC2126904D001C79B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Base; path = Concentration/Base.lproj/Main_lecture1.storyboard.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,9 @@
 		A1160EA921267987001C79B4 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
-				A1160EAA21267987001C79B4 /* AppDelegate.swift */,
 				A1160EAC21267987001C79B4 /* ViewController.swift */,
 				A1160EAE21267987001C79B4 /* Main.storyboard */,
-				A1160EB121267988001C79B4 /* Assets.xcassets */,
-				A1160EB321267988001C79B4 /* LaunchScreen.storyboard */,
+				A1160ED8212679A4001C79B4 /* SupportingFiles */,
 				A1160EB621267988001C79B4 /* Info.plist */,
 			);
 			path = Concentration;
@@ -123,6 +125,26 @@
 				A1160ECC21267988001C79B4 /* Info.plist */,
 			);
 			path = ConcentrationUITests;
+			sourceTree = "<group>";
+		};
+		A1160ED8212679A4001C79B4 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A1160EDE21269067001C79B4 /* lecture1 */,
+				A1160EAA21267987001C79B4 /* AppDelegate.swift */,
+				A1160EB121267988001C79B4 /* Assets.xcassets */,
+				A1160EB321267988001C79B4 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A1160EDE21269067001C79B4 /* lecture1 */ = {
+			isa = PBXGroup;
+			children = (
+				A1160ED921269036001C79B4 /* ViewController_lecture1.swift.md */,
+				A1160EDB2126904D001C79B4 /* Main_lecture1.storyboard.md */,
+			);
+			path = lecture1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1160EDD2126904D001C79B4 /* Main_lecture1.storyboard.md in Resources */,
 				A1160EB521267988001C79B4 /* LaunchScreen.storyboard in Resources */,
 				A1160EB221267988001C79B4 /* Assets.xcassets in Resources */,
 				A1160EB021267987001C79B4 /* Main.storyboard in Resources */,
@@ -258,6 +281,7 @@
 			files = (
 				A1160EAD21267987001C79B4 /* ViewController.swift in Sources */,
 				A1160EAB21267987001C79B4 /* AppDelegate.swift in Sources */,
+				A1160EDA21269036001C79B4 /* ViewController_lecture1.swift.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +331,14 @@
 				A1160EB421267988001C79B4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A1160EDB2126904D001C79B4 /* Main_lecture1.storyboard.md */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1160EDC2126904D001C79B4 /* Base */,
+			);
+			name = Main_lecture1.storyboard.md;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

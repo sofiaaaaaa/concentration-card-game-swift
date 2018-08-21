@@ -16,6 +16,7 @@
 		A1160ECB21267988001C79B4 /* ConcentrationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1160ECA21267988001C79B4 /* ConcentrationUITests.swift */; };
 		A1160EE02126A7D2001C79B4 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1160EDF2126A7D2001C79B4 /* Concentration.swift */; };
 		A1160EE22126A88C001C79B4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1160EE12126A88C001C79B4 /* Card.swift */; };
+		A121F068212AF13100D89BBE /* lecture4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121F067212AF13100D89BBE /* lecture4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A1160ECC21267988001C79B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1160EDF2126A7D2001C79B4 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		A1160EE12126A88C001C79B4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A121F067212AF13100D89BBE /* lecture4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lecture4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +134,20 @@
 		A1160ED8212679A4001C79B4 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A121F066212AF10500D89BBE /* letureNote */,
 				A1160EAA21267987001C79B4 /* AppDelegate.swift */,
 				A1160EB121267988001C79B4 /* Assets.xcassets */,
 				A1160EB321267988001C79B4 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A121F066212AF10500D89BBE /* letureNote */ = {
+			isa = PBXGroup;
+			children = (
+				A121F067212AF13100D89BBE /* lecture4.swift */,
+			);
+			path = letureNote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +285,7 @@
 				A1160EE02126A7D2001C79B4 /* Concentration.swift in Sources */,
 				A1160EE22126A88C001C79B4 /* Card.swift in Sources */,
 				A1160EAB21267987001C79B4 /* AppDelegate.swift in Sources */,
+				A121F068212AF13100D89BBE /* lecture4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

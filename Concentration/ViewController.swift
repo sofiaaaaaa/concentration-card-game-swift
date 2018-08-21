@@ -63,19 +63,19 @@ class ViewController: UIViewController {
         }
     }
     
-    private var emojiChoices = ["🦇", "🦄", "🎃", "🍜", "🐕", "👻", "🍎"]
+    //private var emojiChoices = ["🦇", "🦄", "🎃", "🍜", "🐕", "👻", "🍎"]
+    private var emojiChoices = "🦇🦄🎃🍜🐕👻🍎"
     
     //make a empty Dictionary
     //var emoji =  Dictionary<Int,String>()
-    private var emoji =  [Int:String]()
+    private var emoji =  [Card:String]()
     
     private func emoji(for card: Card) -> String {
         
-        if emoji[card.identifier] == nil, emojiChoices.count > 0  {
-            //let randomIndex = arc4random_uniform(emojiChoices.count) //Cannot convert value of type 'Int' to expected argument type 'UInt32'
-            //let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-            //emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
-            emoji[card.identifier] = emojiChoices.remove(at: emojiChoices.count.arc4random)
+        if emoji[card] == nil, emojiChoices.count > 0  {
+            
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
             
             
         }
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
         //        }
         
         //"??" doing nil check
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
         
     }
     

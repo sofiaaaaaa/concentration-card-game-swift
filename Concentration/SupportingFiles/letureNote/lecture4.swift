@@ -5,6 +5,115 @@
 //  Created by 임지후 on 2018. 8. 20..
 //  Copyright © 2018년 임지후. All rights reserved.
 //
+//: Playground - noun: a place where people can play
+// Lecture 4: More Swift
+
+/*
+ ## protocol
+ A type which is a declaration of functionality only
+ No data storage of any kind(so it doesn't make sense to say it's a "value" or "reference" type)
+ Essentially provides multiple inheritance (of functionality only, not storage) in Swift
+ We'll "ease into" learning about protocols since it's new to most of you
+ 
+ Protocols are a way to express an API more consisely
+ Instead of forcing the caller of an API to pass a specific class, struct, or enum,
+ an API can let callers pass anuy class/struct/enum that the caller wants
+ but can require that they implement certain methods and/or properties that the API wants.
+ The API expresses the functions or variables if wants the caller to provide using a protocol.
+ So a protocol is simply a collection of method and property declarations.
+ 
+ What are protocols good for?
+ Making API more flexible and expressive
+ Blind, structured communication between View and Controller (delegation)
+ Mandating behavior (e.g. the keys of a Dictionary must be hashable)
+ Sharing functionality in diparate types (String, Array, CountableRange are all Collections)
+ Multiple inheritance (of functionality, not data)
+ 
+ A protocol is a TYPE
+ 
+ There are three aspects to a protocol
+ 
+ 1. The protocol declaration (which properties and methods are in the protocol)
+ 2. a class, struct or enum declaration that makes the claim to implement the protocol
+ 3. the code in said class, struct or enum (or extension) that implements the protocol
+ 
+ Declaration of the protocol itself
+ 
+ protocol SomeProtocol : InheritedProtocol1, InheritedProtocol2 {
+ var someProperty: Int { get set }
+ func aMethod(arg1: Double, anotherArgument: String) -> SomeType
+ mutating func changeIt()
+ init(arg: Type)
+ }
+ 
+ Anyone that implements SomeProtocol must also implement InheritedProtocol1 and 2
+ You must specify whether a property is get only or both get and set
+ Any functions that are expected to mutate the receiver should be marked mutating
+ (unless you are going to restrict your protocol to class implementers only with class keyword)
+ 
+ ### How an implementer says "I implement that protocol"
+ class SomeClass : SuperclassOfSomeClass, SomeProtocol, AnotherProtocol {
+ // Implementation of SomeClass here
+ // which must include all the properties and methods in SomeProtocol & AnotherProtocol
+ required init(...)
+ }
+ Claims of conformance to protocols are listed after the superclass for a class
+ (obviously, enums and sturcts would not have the superclass part)
+ Any number of protocols can be implemented by a given class, struct or enum
+ In a class, inits must be marked required(or otherwise a subclass might not conform)
+ */
+
+//Using protocols like the type that they are!
+
+//protocol Moveable {
+//    mutating func move(to point: CGPoint)
+//}
+//
+//class Car : Movable {
+//    func move(to point: CGPoint) { }
+//    func changeOil()
+//}
+//
+//struct Shape : Moveable {
+//    mutating func move(to point: CGPoint) {}
+//    func draw()
+//}
+//
+//let prius: Car = Car()
+//let square: Shape = Shape()
+//
+//var thingToMove: Movable = prius
+//thingToMove.move(to: xx)
+////thingToMove.changeOil()
+//thingToMove = square
+//let thingsToMove : [Moveable] = [prius, square]
+//
+//func slide(slider: Moveable){
+//    let positionToSlideTo = ...
+//        slider.move(to: positionToSlideTo)
+//}
+//
+//slide(prius)
+//slide(square)
+//func slipAndSlide(x: Slippery & Moveable)
+//slipAndSlide(prius)
+
+/*
+ Delegation
+ 
+ - A very important (simple) use of protocols
+ It's a way to implement "blind communication" between a View and its Controller
+ 
+ - How it plays out...
+ 1. A View declares a delegation protocol (i.e. what the View wants the Controller to do for it)
+ 2. The View's API has a weak delegate property whose type is that delegation protocol
+ 3. The View uses the delegate property to get/do things it can't own or control on its own
+ 4. The Controller declares that it implements the protocol
+ 5. The Controller sets delegate of the View to itself using the property in #2 above
+ 6. The Controller implements the protocol (probably it has lots of optional methods in it)
+ 
+ */
+
 
 /*
  

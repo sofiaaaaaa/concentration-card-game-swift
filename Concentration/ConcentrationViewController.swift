@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ConcentraionViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
    // lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)

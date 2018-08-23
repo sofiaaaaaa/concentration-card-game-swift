@@ -30,7 +30,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                 <state key="normal" title="Sports"/>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="R6B-qI-zbu"/>
+                                                    <action selector="changeTheme:" destination="g0z-dZ-P9n" eventType="touchUpInside" id="vrc-Y6-lP5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZy-EO-8Z3">
@@ -38,7 +38,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                 <state key="normal" title="Faces"/>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="lIo-bs-PVf"/>
+                                                    <action selector="changeTheme:" destination="g0z-dZ-P9n" eventType="touchUpInside" id="71L-xY-ykn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkq-WY-OaN">
@@ -46,7 +46,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                 <state key="normal" title="Animals"/>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="z4L-FD-0t7"/>
+                                                    <action selector="changeTheme:" destination="g0z-dZ-P9n" eventType="touchUpInside" id="q0u-PQ-Z9B"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -62,15 +62,18 @@
                         <viewLayoutGuide key="safeArea" id="gqz-K7-GZc"/>
                     </view>
                     <navigationItem key="navigationItem" id="rIF-Cu-CGu"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="Q6l-Il-uVO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgl-sR-uMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="255.19999999999999" y="128.57142857142858"/>
         </scene>
-        <!--Concentraion View Controller-->
+        <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ConcentraionViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="Concentration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,6 +317,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="opF-9B-VTq"/>
+        <segue reference="Q6l-Il-uVO"/>
     </inferredMetricsTieBreakers>
 </document>

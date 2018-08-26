@@ -159,4 +159,87 @@ viewWillLayoutSubviews and viewDidLayoutSubviews
 At any time, if memory gets low, you might get ...
 didReceiveMemoryWarning
 
+### UIScrollView
+Adding subviews to a UIScrollView...
+ScrollView.contentSzie = CGSize(width: 3000, height: 2000)
+aerial.frame = CGRect(x: 150, y: 200, width: 2500, height: 1600)
+scrollView.addSubView(aerial)
+
+aerial.frame = CGRect(x: 0, y:0, width: 2500, height: 1600)
+logo.frame = CGRect(x: 2300, y: 50, width: 120, height: 180)
+scrollView.contentSize = CGSize(width: 2500, height: 1600)
+
+* Where in the content is the scroll view currently positioned?
+
+let uppderleftOfVisible: CGPoint = scrollView.contentOffset
+In the content area's coordinate system.
+
+contentOffset.x : 큰 사진 왼쪽 0 좌표  <---> 스마트폰 화면 영역 x 좌표
+contentOffset.y  : 큰 사진 윗쪽 0 좌표  <---> 스마트폰 화면 영역 y 좌표
+
+* What area in a subview is currently visible?
+
+let visibleRect : CGRect = aerial.convert(scrollView.bounds, from : scrollView)
+
+Why the convertRect? Because the scrollView's bounds are in the scrollView's coordinate system. 
+And there might be zooming going on inside the scrollView too.
+
+* How do you create one?
+
+Just like any other UIView. Drag out in a storyboard or use UIScrollView(fram:).
+Or select a UIView in your storyboard and choose "Embed In -> Scroll View" from Editor menu.
+
+* To add your "too big" UIView in code using addSubview ...
+if let image = UIImage(named: "bigimage.jpg") {
+    let iv = UIImageView(image: image) // iv.frame.size will = image.size
+    scrollView.addSubview(iv)
+}
+
+Add more subviews if you want.
+All of the subviews' frames will be in the UIScrollView's content area's coordinate system
+(that is, (0,0) in the upper left & width and height of contentSize.width & .height).
+
+* Now don't forget to set the contentSize
+common bug is to do the above lines of code (or embed in Xcode) and forget to say:
+scrollView.contentSize = imageView.frame.size (for example)
+
+* Scrolling programmatically
+func scrollRectToVisible(CGRect, animated: Bool)
+
+* Other things you can control in a scroll view
+Whether scrolling is enabled.
+Locking scroll direction to user's first "move"
+The style of the scroll indicators ( call flashScrollIndicators when your scroll view appears)
+Whether the actual content is "inset" from the content area (contentInset property).
+
+* Zooming 
+All UIView's have a property (transform) which is an affine transform (translate, scale, rotate ).
+Scroll view simply modifies this transform when you zoom.
+Zomming is also going to affect the scroll view's contentSize and ContentOffset.
+
+* Will not work without minimum/maximum zoom scale being set
+scrollView.minimumZoomScale = 0.5 // 0.5 means half its normal size
+scrollView.maximumZoomScale = 2.0 // 2.0 means twice its normal size
+
+* Will not work without delegate method to specify view to zoom
+
+func viewForZooming(in scrollView: UIScrollView) -> UIView
+If your scroll view only has on subview, you return it here. More than one? Up to you. 
+
+* Zoom programatically
+
+var zoomScale : CGFloat
+func setZoomScale(CGFloat, animated: Bool)
+func zoom(to rect: CGRect, animated: Bool)
+
+* Lots and lots of delegate methods!
+    The scroll view will keep you up to date with what's going on.
+    
+* Example: delegate method will notify you when zooming ends
+func scrollViewEndZooming(UIScrollView, 
+with view: UIView, // from delegate method above
+atScale: CGFloat)
+
+If you redraw your view of at the new scale, be sure to reset the transform back to identity. 
+
 

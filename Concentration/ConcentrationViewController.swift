@@ -10,9 +10,12 @@
 
 import UIKit
 
-class ConcentrationViewController: UIViewController {
+class ConcentrationViewController: VCLLoggingViewController {
     
-   // lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    override var vclLoggingName: String {
+        return "Game"
+    }
+    
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
